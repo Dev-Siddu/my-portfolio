@@ -1,0 +1,165 @@
+/* --- 1. GLOBAL RESET (PRESERVED) --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+
+}
+
+/* This applies the color globally based on the active theme variable */
+::selection {
+    background-color: var(--selection-bg);
+    color: var(--selection-text);
+}
+
+::-moz-selection {
+    background-color: var(--selection-bg);
+    color: var(--selection-text);
+}
+
+:root {
+    /* Existing Colors mapped to labels */
+    --bg-main: #0d1117;
+    --bg-card: #161b22;
+    --bg-navbar: rgba(13, 17, 23, 0.8);
+    --text-main: #e6edf3;
+    --text-muted: #9ca3af;
+    --primary: #2ea043;
+    /* Your Emerald */
+    --border-color: rgba(255, 255, 255, 0.05);
+    --toggler-icon-filter: invert(1);
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    /* Makes the menu icon white */
+    --primary-glow: rgba(31, 163, 1, 0.197);
+
+    --selection-bg: rgba(46, 160, 67, 0.3);
+    --selection-text: #ffffff;
+
+    --contact-icon: #ffffff;
+    --contact-icon-bg: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='light'] {
+    --bg-main: #f6f8fa;
+    --bg-card: #ffffff;
+    --text-main: #1f2328;
+    --text-muted: #636c76;
+    --primary: #0969da;
+    --border-color: rgba(0, 0, 0, 0.978);
+    /* Professional Blue */
+    --accent-glow: rgba(130, 80, 223, 0.1);
+    --secondary-glow: rgba(9, 105, 218, 0.05);
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    --primary-glow: rgba(0, 122, 204, 0.3);
+
+    --selection-bg: rgba(9, 105, 218, 0.2);
+    --selection-text: #000000;
+
+    --contact-icon: var(--primary);
+    --contact-icon-bg: rgba(9, 105, 218, 0.1);
+}
+
+[data-theme='dotnet'] {
+    --bg-main: #1e1e1e;
+    /* Visual Studio Editor Background */
+    --bg-card: #252526;
+    /* Visual Studio Sidebar Background */
+    --text-main: #d4d4d4;
+    /* VS Light Gray Text */
+    --text-muted: #808080;
+    --primary: #007acc;
+    /* VS Classic Blue */
+    --primary-glow: rgba(0, 122, 204, 0.3);
+
+    /* THE FONT SWAP */
+    --font-family: 'Cascadia Code', 'Consolas', monospace;
+
+    --selection-bg: rgba(0, 122, 204, 0.4);
+    --selection-text: #ffffff;
+
+    --contact-icon: #ffffff;
+    --contact-icon-bg: rgba(0, 122, 204, 0.2);
+}
+
+/* --- 3. BODY & TYPOGRAPHY (PRESERVED & UPDATED) --- */
+body {
+    margin: 0;
+    font-family: var(--font-family, 'Inter', sans-serif);
+    background-color: var(--bg-main);
+    /* Updated to Variable */
+    color: var(--text-main);
+    /* Updated to Variable */
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Also add it to your cards so they fade nicely too */
+.experience-card,
+.skill-card,
+.contact-card-premium,
+.portfolio-navbar {
+    transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 40px 15px;
+    }
+}
+
+html {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: calc(2rem + 1.5vw);
+    font-weight: 800;
+}
+
+h2 {
+    font-size: calc(1.5rem + 1vw);
+    font-weight: 700;
+}
+
+h3 {
+    font-size: calc(1.2rem + 0.5vw);
+}
+
+p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    /* Updated to Variable */
+}
+
+@media (max-width: 576px) {
+    html {
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* --- 4. SHARED ELEMENTS (PRESERVED) --- */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.text-emerald {
+    color: var(--primary) !important;
+}

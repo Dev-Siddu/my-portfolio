@@ -1,0 +1,78 @@
+.skills-section {
+    background-color: var(--bg-main);
+    /* VARIABLE */
+    padding-bottom: 75px;
+}
+
+.skill-card {
+    background: var(--bg-surface-glass);
+    /* VARIABLE */
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    /* VARIABLE */
+    border-radius: 16px;
+    padding: 2rem;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    /* Now glows Indigo in .NET mode, Green in Hacker mode */
+    border-color: var(--primary);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.skill-header i {
+    font-size: 1.8rem;
+    color: var(--primary);
+    /* Icon color follows theme */
+}
+
+.skill-header h3 {
+    font-size: 1.25rem;
+    color: var(--text-main);
+    /* VARIABLE */
+    margin: 0;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-badge {
+    background: var(--bg-main);
+    /* Darker background for badges */
+    color: var(--text-muted);
+    /* VARIABLE */
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    border: 1px solid var(--border-color);
+    /* VARIABLE */
+    transition: all 0.2s ease;
+}
+
+.skill-badge:hover {
+    /* Badge highlight follows theme primary color */
+    background: var(--primary-glow);
+    color: var(--primary);
+    border-color: var(--primary);
+    cursor: default;
+}
+
+/* Mobile Tweak */
+@media (max-width: 768px) {
+    .skill-card {
+        padding: 1.5rem;
+    }
+}

@@ -1,0 +1,44 @@
+.theme-dropdown-wrapper {
+    display: flex;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 4px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.theme-dropdown-wrapper:hover {
+    border-color: var(--primary);
+}
+
+.theme-icon-label {
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+.theme-select {
+    background: transparent;
+    color: var(--text-main);
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+    padding-right: 5px;
+}
+
+/* Logic for Mobile: Ensure it doesn't look cramped in the hamburger menu */
+@media (max-width: 991px) {
+    .theme-dropdown-wrapper {
+        width: 100%;
+        justify-content: space-between;
+        padding: 10px 15px;
+        margin-top: 10px;
+    }
+
+    .theme-select {
+        flex-grow: 1;
+        text-align: right;
+    }
+}

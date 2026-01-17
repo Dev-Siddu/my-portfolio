@@ -1,0 +1,206 @@
+.hero-section {
+    display: block;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    background-color: var(--bg-main);
+    /* VARIABLE */
+}
+
+.hero-section .row {
+    min-height: auto !important;
+    margin-top: 2rem;
+}
+
+.hero-content h1 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+    /* VARIABLE */
+    line-height: 1.1;
+}
+
+/* --- BUTTONS: CENTRALIZED COLORS --- */
+.btn-custom {
+    width: 160px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary-glow {
+    position: relative;
+    background-color: var(--primary);
+    /* VARIABLE */
+    color: #ffffff !important;
+    border: none;
+    padding: 12px 28px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px var(--primary-glow);
+    /* VARIABLE */
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.btn-primary-glow:hover {
+    filter: brightness(1.2);
+    /* Naturally brightens whatever the theme color is */
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px var(--primary-glow);
+    /* VARIABLE */
+    color: #fff;
+}
+
+/* Light Streak (Matches any theme) */
+.btn-primary-glow::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(30deg);
+    transition: all 0.5s ease;
+}
+
+.btn-primary-glow:hover::after {
+    left: 120%;
+}
+
+.btn-outline-white {
+    background: transparent;
+    color: var(--text-main) !important;
+    /* VARIABLE */
+    border: 1px solid var(--border-color);
+    /* VARIABLE */
+    padding: 12px 28px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+}
+
+.btn-outline-white:hover {
+    background: var(--border-color);
+    /* VARIABLE */
+    color: var(--text-main);
+}
+
+/* --- TERMINAL: MAINTAINABLE LOOK --- */
+.hero-terminal {
+    background: var(--bg-card);
+    /* VARIABLE */
+    border: 1px solid var(--border-color);
+    /* VARIABLE */
+    border-radius: 12px;
+    width: 100%;
+    max-width: 420px;
+    padding: 1.2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    color: var(--text-main);
+}
+
+.terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+/* Typography Fixes */
+.title-span {
+    color: var(--primary);
+    /* VARIABLE */
+    font-size: 1.8rem;
+}
+
+/* TERMINAL DOTS (Keep these hardcoded as they are standard OS colors) */
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-red {
+    background: #ff5f56;
+}
+
+.dot-yellow {
+    background: #ffbd2e;
+}
+
+.dot-green {
+    background: #27c93f;
+}
+
+
+.hero-portrait-container {
+    position: relative;
+    padding: 20px;
+}
+
+.portrait-frame {
+    position: relative;
+    z-index: 2;
+    width: 320px;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    background: var(--bg-card);
+}
+
+.portrait-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Keeps it natural and high-end */
+    filter: brightness(0.95) contrast(1.05);
+}
+
+.portrait-accent-box {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 100px;
+    height: 100px;
+    border-bottom: 4px solid var(--primary);
+    border-right: 4px solid var(--primary);
+    z-index: 1;
+}
+
+/* Minimalist Terminal Style */
+.hero-terminal-mini {
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid var(--primary);
+    padding: 15px 20px;
+    border-radius: 4px;
+    max-width: 450px;
+    font-family: 'Cascadia Code', 'Consolas', monospace;
+}
+
+.terminal-body-mini {
+    margin: 0;
+    /* color: var(--text-muted); */
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 991px) {
+    .portrait-frame {
+        width: 280px;
+        height: 350px;
+    }
+}

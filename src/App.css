@@ -1,0 +1,36 @@
+.portfolio-bg-effect {
+    position: relative;
+    background-color: var(--bg-main);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* The Sharp Light Beam (Dynamic) */
+.portfolio-bg-effect::before {
+    content: "";
+    position: absolute;
+    top: -150px;
+    left: -150px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle at 20% 20%,
+            var(--accent-glow) 0%,
+            transparent 60%);
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* The Subtle Glow (Dynamic) */
+.portfolio-bg-effect::after {
+    content: "";
+    position: absolute;
+    top: 20%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--secondary-glow) 0%, transparent 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+}
