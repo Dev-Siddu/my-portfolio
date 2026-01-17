@@ -1,5 +1,10 @@
-export const RESUME_PATH = "/My_Assets/Siddarood_Resume_Latest.pdf";
-export const MY_IMAGE_PATH = "/My_Assets/Siddarood_Image.jpg";
+const getAssetPath = (path) => {
+    const base = import.meta.env.BASE_URL;
+    return `${base}${path}`.replace(/\/+/g, '/');
+};
+
+export const RESUME_PATH = getAssetPath('My_Assets/Siddarood_Resume_Latest.pdf');
+export const MY_IMAGE_PATH = getAssetPath('My_Assets/Siddarood_Image.jpg');
 
 export const WORK_HISTORY = [
     {
